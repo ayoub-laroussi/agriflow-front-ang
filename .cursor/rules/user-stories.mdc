@@ -1,0 +1,51 @@
+---
+description: "User stories et fonctionnalités AgriFlow"
+---
+
+# User Stories AgriFlow
+
+Référez-vous au [PRD complet](mdc:docs/prd-agriflow.md) pour toutes les user stories détaillées.
+
+## MVP - Fonctionnalités prioritaires
+
+### Gestion Terrains & Espaces (US-001 à US-004)
+- **US-001** : Création terrain avec caractéristiques
+- **US-002** : Division en espaces de culture typés
+- **US-003** : Gestion planches pour potagers
+- **US-004** : Visualisation organisation espaces
+
+### Gestion Cultures (US-005 à US-008)
+- **US-005** : Enregistrement nouvelle culture
+- **US-006** : Suivi statuts cultures
+- **US-007** : Association cultures aux espaces/planches
+- **US-008** : Planification rotation cultures
+
+### Actions Agricoles (US-009 à US-012)
+- **US-009** : Enregistrement actions quotidiennes
+- **US-010** : Planification actions futures
+- **US-011** : Configuration actions récurrentes
+- **US-012** : Consultation historique actions
+
+## Phase 2 - Calendrier (US-013 à US-016)
+- **US-013** : Calendrier interactif
+- **US-014** : Filtrage événements
+- **US-015** : Modification dates planifiées
+- **US-016** : Export planning
+
+## Phase 3 - Observations (US-017 à US-020)
+- **US-017** : Enregistrement observations
+- **US-018** : Suivi conditions météo
+- **US-019** : Documentation problèmes
+- **US-020** : Consultation historique
+
+## Collaboration future (US-021 à US-024)
+- **US-021** : Invitation collaborateurs
+- **US-022** : Attribution rôles
+- **US-023** : Partage données spécifiques
+- **US-024** : Communication interne
+
+## Principes de développement
+- Interface intuitive pour agriculteurs (tous niveaux tech)
+- Optimisation mobile (utilisation terrain)
+- Données structurées mais flexibles
+- Traçabilité complète des actions

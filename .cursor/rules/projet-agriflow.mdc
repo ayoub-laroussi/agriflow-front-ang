@@ -1,0 +1,52 @@
+---
+alwaysApply: true
+---
+
+# Contexte du Projet AgriFlow
+
+## Vue d'ensemble
+AgriFlow est une application web de gestion agricole développée par ShiroUsagiLabo. Elle permet aux agriculteurs de digitaliser et optimiser la gestion de leurs cultures avec une traçabilité complète.
+
+## Architecture actuelle
+- **Projet**: Frontend uniquement (Angular 19)
+- **Technologies**: TypeScript + SCSS + TailwindCSS v4
+- **Structure**: Application Angular standalone
+- **Communication**: API REST avec backend séparé (à développer)
+- **État**: Gestion locale avec Angular Signals
+
+## Documents de référence
+Consultez toujours ces documents pour comprendre le contexte métier :
+- [PRD complet](mdc:docs/prd-agriflow.md) - Document d'exigences produit détaillé
+- [Règles de gestion](mdc:docs/regle-de-gestion.md) - Logique métier et contraintes
+- [Problématiques](mdc:docs/problematique.md) - Problèmes identifiés et solutions
+
+## Modèles de données principaux
+1. **Terrain** : Espace physique global (nom, surface, localisation)
+2. **EspaceCulture** : Subdivision d'un terrain par type (rizière, champ, verger, potager)
+3. **PlancheCulture** : Subdivision d'un espace pour cultures spécifiques
+4. **Culture** : Plante cultivée (nom, variété, date plantation, statuts)
+5. **Action** : Interventions agricoles (type, date, commentaires)
+6. **Observation** : Notes et conditions météo
+
+## Statuts des cultures
+- `inutilisable`, `en jachère`, `en préparation`, `en production`, `en croissance`, `récoltée`, `malade`
+
+## Types d'actions agricoles
+- **Préparation du sol** : Labour, amendement, préparation
+- **Plantation** : Semis, repiquage (avec espacements et quantités)
+- **Entretien** : Arrosage, binage, taille
+- **Protection** : Traitements, protection contre ravageurs
+- **Récolte** : Collecte des productions
+
+## Utilisateurs cibles
+- Agriculteurs individuels et exploitations
+- Maraîchers et producteurs de légumes
+- Exploitants rizicoles
+- Arboriculteurs
+- Agriculteurs urbains et périurbains
+
+## Priorités de développement
+1. **Phase MVP** : Gestion terrains, espaces, actions de base
+2. **Fonctionnalités essentielles** : Cultures complètes, calendrier
+3. **Avancées** : Observations, météo, collaborations
+4. **Extensions** : Analytics, prédictions, multi-langue

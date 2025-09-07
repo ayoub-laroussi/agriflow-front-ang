@@ -1,0 +1,54 @@
+---
+globs: "*.ts,*.html,*.scss"
+---
+
+# Conventions de Code AgriFlow
+
+## Angular & TypeScript (Frontend uniquement)
+- Utilisez les **Signals** pour la gestion d'état réactive
+- Préférez les **Standalone Components** 
+- Nommage : PascalCase pour les classes, camelCase pour les propriétés
+- Interfaces avec préfixe `I` (ex: `ITerrain`, `IEspaceCulture`)
+- Services avec suffixe `Service` (ex: `TerrainService`)
+- Services API pour communication backend (ex: `ApiTerrainService`)
+- Mock data/services pour développement sans backend
+
+## Structure des composants
+```typescript
+// Ordre des propriétés dans les composants
+export class MonComponent {
+  // 1. Signaux de state
+  private readonly terrains = signal<ITerrain[]>([]);
+  
+  // 2. Propriétés computed
+  readonly terrainsCount = computed(() => this.terrains().length);
+  
+  // 3. Injection de dépendances
+  private terrainService = inject(TerrainService);
+  
+  // 4. Lifecycle hooks
+  ngOnInit() { }
+  
+  // 5. Méthodes publiques
+  ajouterTerrain() { }
+  
+  // 6. Méthodes privées
+  private validerTerrain() { }
+}
+```
+
+## Styles SCSS + TailwindCSS
+- Utilisez `@use "tailwindcss";` en en-tête de styles.scss
+- Classes utilitaires Tailwind en priorité
+- SCSS uniquement pour styles personnalisés complexes
+- Variables CSS pour thèmes (couleurs agriculture)
+
+## Nommage métier
+- Respectez la terminologie agricole : `terrain`, `espace`, `planche`, `culture`
+- Status : `EnJachere`, `EnPreparation`, `EnProduction`, etc.
+- Actions : `PreparationSol`, `Plantation`, `Entretien`, `Protection`, `Recolte`
+
+## Gestion des erreurs
+- Messages d'erreur explicites en contexte agricole
+- Validation des données avant sauvegarde
+- Confirmation pour suppressions (règles cascade)

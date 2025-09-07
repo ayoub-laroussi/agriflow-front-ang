@@ -1,0 +1,40 @@
+---
+description: "Règles métier et contraintes de gestion AgriFlow"
+---
+
+# Règles Métier AgriFlow
+
+Référez-vous au document complet : [Règles de gestion](mdc:docs/regle-de-gestion.md)
+
+## Hiérarchie des entités
+```
+Terrain
+└── EspaceCulture (1..n)
+    └── PlancheCulture (0..n)
+        └── Culture (1..n)
+            └── Action (0..n)
+```
+
+## Règles de suppression (cascade)
+- **RG6** : Suppression terrain → suppression espaces associés
+- **RG13** : Suppression espace → suppression planches et cultures
+- **RG20** : Suppression planche → suppression cultures associées
+- **RG29** : Suppression culture → suppression actions associées
+
+## Contraintes importantes
+- **RG25** : Une culture peut être associée à un espace OU une planche
+- **RG32** : Plantation doit inclure espacements (rangs/lignes) + quantité
+- **RG38-40** : Actions peuvent cibler espace, planche OU culture précise
+- **RG48** : Utilisateur gère uniquement ses propres espaces
+- **RG50** : Propriétaire peut inviter collaborateurs (rôles définis)
+
+## Types de contenants par espace
+- **Rizière** : Gestion par parcelles inondées
+- **Champ** : Grandes cultures, rotations
+- **Verger** : Cultures pérennes, arbres fruitiers
+- **Potager** : Planches détaillées, cultures diverses
+
+## Gestion des statuts
+- Progression logique : `en préparation` → `en production` → `en croissance` → `récoltée`
+- Statuts spéciaux : `en jachère`, `malade`, `inutilisable`
+- Cultures pérennes : pas de cycle fermé automatique

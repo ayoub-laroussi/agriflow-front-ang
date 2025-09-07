@@ -1,0 +1,109 @@
+---
+alwaysApply: true
+---
+
+# Architecture Frontend AgriFlow
+
+## Responsabilités du Frontend
+Ce projet est **uniquement le frontend** de l'application AgriFlow :
+- Interface utilisateur réactive et moderne
+- Gestion de l'état local avec Angular Signals
+- Communication avec API backend (à développer séparément)
+- Validation côté client
+- Expérience utilisateur optimisée
+
+## Structure des dossiers recommandée
+```
+src/
+├── app/
+│   ├── core/           # Services, guards, interceptors
+│   │   └─ services/    # Services API et métier
+│   ├── shared/         # Composants réutilisables
+│   │   └── components/ # Composants UI génériques
+│   ├── features/       # Modules fonctionnels
+│   │   ├── terrains/   # Gestion des terrains
+│   │   ├── cultures/   # Gestion des cultures
+│   │   ├── actions/    # Actions agricoles
+│   │   └── calendrier/ # Planning et calendrier
+│   └── layouts/        # Layouts principaux
+├── assets/             # Images, icons, data statique
+└── styles/             # Styles globaux SCSS
+```
+
+## Services Frontend
+- **API Services** : Communication HTTP avec backend
+- **State Services** : Gestion état avec Signals
+- **Mock Services** : Données de test pour développement
+- **Utility Services** : Fonctions helpers
+
+## Gestion des données
+- **Pas de base de données locale** : tout via API
+- **Cache temporaire** : Signals pour état réactif
+- **Offline** : LocalStorage pour données critiques
+- **Validation** : Côté client ET serveur
+
+## Communication API
+- **REST API** : Endpoints RESTful standard
+- **HTTP Interceptors** : Gestion auth, erreurs, loading
+- **Error Handling** : Messages utilisateur explicites
+- **Loading States** : Indicateurs visuels appropriés
+
+## Développement sans backend
+- **Mock Data** : Fichiers JSON avec données d'exemple
+- **Environment Variables** : Mode dev/prod
+- **API Mocking** : Services mockés pour tests
+- **Données réalistes** : Exemples agricoles concrets
+# Architecture Frontend AgriFlow
+
+## Responsabilités du Frontend
+Ce projet est **uniquement le frontend** de l'application AgriFlow :
+- Interface utilisateur réactive et moderne
+- Gestion de l'état local avec Angular Signals
+- Communication avec API backend (à développer séparément)
+- Validation côté client
+- Expérience utilisateur optimisée
+
+## Structure des dossiers recommandée
+```
+src/
+├── app/
+│   ├── core/           # Services, guards, interceptors
+│   │   ├── services/   # Services API et métier
+│   │   ├── models/     # Interfaces TypeScript
+│   │   └── guards/     # Route guards
+│   ├── shared/         # Composants réutilisables
+│   │   ├── components/ # Composants UI génériques
+│   │   └── pipes/      # Pipes personnalisés
+│   ├── features/       # Modules fonctionnels
+│   │   ├── terrains/   # Gestion des terrains
+│   │   ├── cultures/   # Gestion des cultures
+│   │   ├── actions/    # Actions agricoles
+│   │   └── calendrier/ # Planning et calendrier
+│   └── layouts/        # Layouts principaux
+├── assets/             # Images, icons, data statique
+└── styles/             # Styles globaux SCSS
+```
+
+## Services Frontend
+- **API Services** : Communication HTTP avec backend
+- **State Services** : Gestion état avec Signals
+- **Mock Services** : Données de test pour développement
+- **Utility Services** : Fonctions helpers
+
+## Gestion des données
+- **Pas de base de données locale** : tout via API
+- **Cache temporaire** : Signals pour état réactif
+- **Offline** : LocalStorage pour données critiques
+- **Validation** : Côté client ET serveur
+
+## Communication API
+- **REST API** : Endpoints RESTful standard
+- **HTTP Interceptors** : Gestion auth, erreurs, loading
+- **Error Handling** : Messages utilisateur explicites
+- **Loading States** : Indicateurs visuels appropriés
+
+## Développement sans backend
+- **Mock Data** : Fichiers JSON avec données d'exemple
+- **Environment Variables** : Mode dev/prod
+- **API Mocking** : Services mockés pour tests
+- **Données réalistes** : Exemples agricoles concrets
